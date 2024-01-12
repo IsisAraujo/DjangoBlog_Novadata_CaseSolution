@@ -30,7 +30,7 @@ staticfiles/
 
 # Arquivos de dependências
 pip-log.txt
-requirements.txt
+
 
 # Arquivos locais de configuração (settings.py)
 local_settings.py
