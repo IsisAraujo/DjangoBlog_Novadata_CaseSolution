@@ -1,0 +1,49 @@
+# Arquivos de compilação Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos de ambiente virtual
+venv/
+env/
+
+# Arquivos de log
+*.log
+
+# Arquivos de backup e caches
+*.bak
+*.swp
+*.swo
+*.db
+*.sqlite3
+
+# Arquivos de configuração
+*.ini
+*.cfg
+
+# Arquivos de mídia (imagens, uploads)
+media/
+
+# Diretório de dados estáticos coletados
+staticfiles/
+
+# Arquivos de dependências
+pip-log.txt
+requirements.txt
+
+# Arquivos locais de configuração (settings.py)
+local_settings.py
+
+# Arquivos de configuração de IDE
+.idea/
+.vscode/
+
+# Arquivos temporários
+*~
+
+# Diretório de node_modules (se estiver usando JavaScript)
+node_modules/
+
+# Diretório de saída de compilação (se estiver usando TypeScript)
+dist/

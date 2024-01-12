@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Posts{% endblock %}
+
+{% block content %}
+<h1>Lista de Posts</h1>
+{% for post in posts %}
+<div>
+    <h2>{{ post.titulo }}</h2>
+    <p>Autor: {{ post.autor.username }}</p>
+    <p>Data de Publicação: {{ post.data_publicacao }}</p>
+    <a href="{% url 'detalhes_post' post.id %}">Ver detalhes</a>
+
+    <h3>Comentários:</h3>
+    <ul>
+        {% for comment in post.comentarios.all %}
+        <li>
+            <strong>{{ comment.autor.username }} disse:</strong>
+            {{ comment.conteudo }} - <em>{{ comment.data_criacao }}</em>
+        </li>
+        {% empty %}
+        <li>Nenhum comentário ainda.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endfor %}
+{% endblock %}

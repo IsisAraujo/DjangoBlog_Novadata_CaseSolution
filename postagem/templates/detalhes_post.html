@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.titulo }}{% endblock %}
+
+{% block content %}
+<h1>{{ post.titulo }}</h1>
+<p>Autor: {{ post.autor.username }}</p>
+<p>Data de Publicação: {{ post.data_publicacao }}</p>
+<p>{{ post.conteudo }}</p>
+<h2>Comentários:</h2>
+<ul>
+    {% for comment in post.comentarios.all %}
+    <li>
+        <strong>{{ comment.autor.username }} disse:</strong>
+        {{ comment.conteudo }} - <em>{{ comment.data_criacao }}</em>
+    </li>
+    {% empty %}
+    <li>Nenhum comentário ainda.</li>
+    {% endfor %}
+</ul>
+
+<!-- Botão Voltar -->
+<a href="{% url 'listar_posts' %}" class="btn btn-primary">Voltar</a>
+
+{% endblock %}
