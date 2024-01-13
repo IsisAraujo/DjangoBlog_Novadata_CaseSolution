@@ -2,13 +2,38 @@
 <html>
 <head>
     <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    <style>
+        body {
+            background-color: #0D0C0B; /* Fundo */
+            color: #0D0C0B; /* Corpo */
+        }
+        header {
+            background-color: #05F26C; /* Fundo do Título */
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            color: #0D0C0B; /* Cor do texto 'Meu Blog' */
+            margin: 0; /* Remove a margem padrão se necessário */
+        }
+        main {
+            padding: 15px;
+        }
+        .btn-primary {
+            background-color: #05F26C; /* Botão */
+            border-color: #05F26C; /* Borda do botão */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Meu Blog</h1>
+        <h1 style="color: #0D0C0B;">Blog Novadata</h1> <!-- Cor do texto 'Meu Blog' ajustada aqui -->
     </header>
     <main>
         {% block content %}{% endblock %}
     </main>
+    {% bootstrap_javascript jquery='full' %}
 </body>
 </html>

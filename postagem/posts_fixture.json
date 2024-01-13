@@ -1,0 +1,12 @@
+[
+    {
+        "model": "postagem.post",
+        "pk": 1,
+        "fields": {
+            "titulo": "Post 1",
+            "conteudo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis sed augue in rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec lacus quis nisi vehicula vestibulum ac ut sem. Quisque porta neque tortor, sit amet pretium lectus consectetur at. Sed sit amet sem vel urna consectetur pellentesque at ac nulla. In interdum auctor arcu. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin tincidunt, sem ut imperdiet fringilla, lacus lectus cursus lacus, id euismod magna nisi ac nunc. Nullam in mollis magna. Fusce purus odio, lobortis vitae facilisis a.",
+            "autor": 2,
+            "data_publicacao": "2024-01-10T10:06:47-03:00"
+        }
+    }
+]

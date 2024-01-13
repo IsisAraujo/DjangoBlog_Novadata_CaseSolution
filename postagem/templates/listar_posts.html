@@ -1,27 +1,45 @@
 {% extends 'base.html' %}
 
+{% load bootstrap4 %}
+
 {% block title %}Lista de Posts{% endblock %}
 
 {% block content %}
-<h1>Lista de Posts</h1>
-{% for post in posts %}
-<div>
-    <h2>{{ post.titulo }}</h2>
-    <p>Autor: {{ post.autor.username }}</p>
-    <p>Data de Publicação: {{ post.data_publicacao }}</p>
-    <a href="{% url 'detalhes_post' post.id %}">Ver detalhes</a>
+<div class="container mt-5">
+    <!-- Card para o Título da Página -->
+    <div class="card mb-4">
+        <div class="card-body text-center">
+            <h2 class="h4">Lista de Posts</h2>
+        </div>
+    </div>
 
-    <h3>Comentários:</h3>
-    <ul>
-        {% for comment in post.comentarios.all %}
-        <li>
-            <strong>{{ comment.autor.username }} disse:</strong>
-            {{ comment.conteudo }} - <em>{{ comment.data_criacao }}</em>
-        </li>
-        {% empty %}
-        <li>Nenhum comentário ainda.</li>
-        {% endfor %}
-    </ul>
+    <!-- Cards para cada Post -->
+    {% for post in posts %}
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3 class="h5">{{ post.titulo }}</h3>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><small class="text-muted">Autor: {{ post.autor.username }}</small></p>
+            <p class="card-text"><small class="text-muted">Data de Publicação: {{ post.data_publicacao }}</small></p>
+            <a href="{% url 'detalhes_post' post.id %}" class="btn btn-outline-secondary btn-sm">Ver detalhes</a>
+        </div>
+        <div class="card-footer">
+            {% if post.comentarios.all %}
+                <h4 class="h6">Comentários:</h4>
+                <ul class="list-group list-group-flush">
+                    {% for comment in post.comentarios.all %}
+                    <li class="list-group-item">
+                        <strong>{{ comment.autor.username }} disse:</strong> {{ comment.conteudo }}
+                        <div><small class="text-muted">{{ comment.data_criacao }}</small></div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-muted">Nenhum comentário ainda.</p>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
 {% endblock %}

@@ -4,8 +4,8 @@ from django.utils import timezone
 
 
 class Post(models.Model):
-    titulo = models.CharField(max_length=200)
-    conteudo = models.TextField()
+    titulo = models.CharField(max_length=200, verbose_name='título')
+    conteudo = models.TextField(verbose_name='conteúdo')
     data_publicacao = models.DateTimeField(default=timezone.now)
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -16,7 +16,7 @@ class Post(models.Model):
 class Comment(models.Model):
     # varios autores
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
-    conteudo = models.TextField()
+    conteudo = models.TextField(verbose_name='conteúdo')
     data_criacao = models.DateTimeField(default=timezone.now)
     # varias publicacoes
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comentarios')
