@@ -15,12 +15,12 @@ Este projeto contém as instruções e a resolução do Case Técnico da Novadat
 
 ### Para começar
 
-1. **Faça uma cópia do repositório original clicando [aqui](https://github.com/IsisAraujo/DjangoBlog_Novadata_CaseSolution/generate).**
+1. **Faça uma cópia do repositório original clicando [aqui](https://github.com/IsisAraujo/DjangoBlog_Novadata_CaseSolution/generate).** Ou click para acessar o repositório https://github.com/IsisAraujo/DjangoBlog_Novadata_CaseSolution
 
 2. **Clone o repositório localmente:**
 
 ```bash
-git clone [https://github.com/](https://github.com/)<SEU_USUARIO>/DjangoBlog_Novadata_CaseSolution.git
+git clone https://github.com/<SEU_USUARIO>/DjangoBlog_Novadata_CaseSolution.git
 ```
 3. **Instale as Dependências:**
 
@@ -45,9 +45,10 @@ Abra um navegador da web e vá para http://localhost:8000/ para ver o projeto em
 
 Você pode executar os testes do projeto com o seguinte comando:
 
-bash
-
+```bash
 python manage.py test
+```
+Este comando executa todos os testes automatizados que foram escritos para o projeto. É uma boa prática executar os testes após qualquer alteração significativa no código para garantir que tudo ainda esteja funcionando como esperado.
 
 📋 Requisitos
 

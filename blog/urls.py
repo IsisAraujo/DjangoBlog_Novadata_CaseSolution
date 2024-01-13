@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.shortcuts import redirect
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from postagem import views
@@ -15,5 +16,6 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtido'),
     path('postagem/listar_posts', views.listar_posts, name='listar_posts'),
     path('postagem/<int:post_id>/', views.detalhes_post, name='detalhes_post'),
-    path('postagem/adicionar_post/', views.adicionar_post, name='adicionar_post')
+    path('postagem/adicionar_post/', views.adicionar_post, name='adicionar_post'),
+    path('', lambda request: redirect('listar_posts'), name='pagina_inicial'),
 ]
